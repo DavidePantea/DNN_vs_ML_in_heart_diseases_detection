@@ -15,12 +15,13 @@ Make sure Docker is running:
   ```
 
 ## 1) Build the Docker image
-From the project root (same folder as Dockerfile):
+From the project root, same folder as Dockerfile:
   ```bash
     docker build -t myimage .
   ```
+**If you do not have all the packages installed**
 
-## 3) Run the container (choose model via CLI):
+## 2) Run the container (choose model via CLI):
 To run a model use the following code:
 ```bash
     docker run --rm myimage --model <model_name> --epochs <nr_epochs>
@@ -32,18 +33,37 @@ In case you are unsure what models are available check in src/main.py:
     elif args.model == "b":
         train_b(epochs=args.epochs)
 ```
+## 3) Handling Datasets
+Datasets are downloaded authomatically at runtime, and are stored in ./datasets/versions/6/heart_disease_uci.csv.
+When uploading they are not included in download
 
-## 2) Work on the project
+
+## 4) Project Structure
 The models should be included in model_a.py and model_by.py
   ```bash
-  .
-  ├── Dockerfile
-  ├── requirements.txt
-  └── src
-      ├── __init__.py
-      ├── main.py
-      └── models
-          ├── __init__.py
-          ├── model_a.py <-- DL Code
-          └── model_b.py <-- ML Code
+ .
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── scripts/
+│   └── get_dataset.py
+├── datasets/              # downloaded automatically (NOT in git)
+├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   └── models
+│       ├── __init__.py
+│       ├── model_a.py     # DL model
+│       └── model_b.py     # ML model
+```
+Ignored files (.gitignore)
+```bash
+datasets/
+runs/
+outputs/
+.kagglehub/
+__pycache__/
+*.pyc
+.venv/
+```
 
