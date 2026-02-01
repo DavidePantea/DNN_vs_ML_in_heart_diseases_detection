@@ -14,5 +14,10 @@ def main():
     else:
         train_b(epochs=args.epochs)
 
+def ensure_dataset():
+    from scripts.get_dataset import main as download_main
+    download_main()
+
 if __name__ == "__main__":
+    ensure_dataset()
     main()
