@@ -1,3 +1,7 @@
-# datasets and caches
 datasets/
+runs/
+outputs/
+__pycache__/
+*.pyc
+.venv/
 .kagglehub/

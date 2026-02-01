@@ -2,6 +2,7 @@ services:
   app:
     build: .
     volumes:
+      - .:/app
       - ./datasets:/app/datasets
     environment:
       - DATASETS_DIR=/app/datasets
