@@ -22,7 +22,7 @@ def main():
 
     if args.model == "a":
         train_a(epochs=args.epochs)
-    else:
+    elif args.model == "b":
         train_b(epochs=args.epochs)
 
 
