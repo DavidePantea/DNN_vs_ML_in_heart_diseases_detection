@@ -6,3 +6,4 @@ RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 ENTRYPOINT ["python", "-m", "src.main"]
+CMD ["--model", "a", "--epochs", "10"]

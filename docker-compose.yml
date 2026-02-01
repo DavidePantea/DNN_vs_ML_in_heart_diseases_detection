@@ -5,4 +5,3 @@ services:
       - ./datasets:/app/datasets
     environment:
       - DATASETS_DIR=/app/datasets
-    command: ["python", "scripts/get_dataset.py"]
