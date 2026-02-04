@@ -5,7 +5,7 @@ import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report, confusion_matrix
-from src.cleaner.clean_dataset import clean_dataset
+from src.clean_dataset import clean_dataset
 
 # Use tensorflow.keras to ensure compatibility
 from tensorflow.keras.models import Sequential
