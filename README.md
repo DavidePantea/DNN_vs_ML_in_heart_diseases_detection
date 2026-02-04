@@ -24,7 +24,7 @@ From the project root, same folder as Dockerfile:
 ## 2) Run the container (choose model via CLI):
 To run a model use the following code:
 ```bash
-    docker run --rm myimage --model <model_name> --epochs <nr_epochs>
+    docker run --rm myimage --train --model <model>  --epochs <epochs_nr>
 ```
 In case you are unsure what models are available check in src/main.py:
 ```bash
